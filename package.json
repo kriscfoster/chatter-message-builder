@@ -1,5 +1,5 @@
 {
-  "name": "chatter-message-builder",
+  "name": "chatter-post-builder",
   "version": "1.0.0",
   "description": "Helps with building Salesforce chatter feed elements (supporting rich-text) which are supported by the Salesforce Chatter API.",
   "scripts": {
@@ -8,6 +8,7 @@
   "keywords": [
     "salesforce",
     "chatter",
+    "post",
     "feed-element",
     "rich-text",
     "converter"

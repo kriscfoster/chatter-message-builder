@@ -1,5 +1,5 @@
 module.exports = {
-  buildMessage(text='', group='me', mentions=[]) {
+  buildPost(text='', group='me', mentions=[]) {
     const message = {
       body: {
         messageSegments: [],
