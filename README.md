@@ -1,6 +1,6 @@
 # chatter-post-builder
 
-Helps with building Salesforce chatter feed elements (supporting rich-text) which are supported by the Salesforce Chatter API ☁️
+Helps to build Salesforce chatter feed elements (includes rich-text support) which are supported by the Salesforce Chatter API ☁️
 
 ## Install
 ```shell

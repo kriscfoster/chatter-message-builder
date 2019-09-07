@@ -7,7 +7,7 @@ describe('chatter-message-builder.js >', () => {
 
   describe('plain-text message building >', () => {
     test('should construct feed item object with defaults', () => {
-      const message = chatterPostBuilder.buildMessage();
+      const message = chatterPostBuilder.buildPost();
       expect(message).toHaveProperty('body');
       expect(message.body).toHaveProperty('messageSegments');
       expect(Array.isArray(message.body.messageSegments)).toBe(true);
@@ -16,7 +16,7 @@ describe('chatter-message-builder.js >', () => {
 
     test('should construct feed item object with text segment', () => {
       const message = chatterPostBuilder
-        .buildMessage('This is plain text');
+        .buildPost('This is plain text');
       const { messageSegments } = message.body;
       expect(messageSegments.length).toEqual(1);
 
@@ -26,13 +26,13 @@ describe('chatter-message-builder.js >', () => {
 
     test('should override default group', () => {
       const message = chatterPostBuilder
-        .buildMessage('This is plain text', groupId);
+        .buildPost('This is plain text', groupId);
       expect(message.subjectId).toEqual(groupId);
     });
 
     test('should append @mention to messageSegments', () => {
       const message = chatterPostBuilder
-        .buildMessage('This is plain text', null, [userId1]);
+        .buildPost('This is plain text', null, [userId1]);
       const { messageSegments } = message.body;
       expect(messageSegments.length).toEqual(2);
       expect(messageSegments[0].type).toEqual('Text');
@@ -43,7 +43,7 @@ describe('chatter-message-builder.js >', () => {
 
     test('should append multiple @mentions to messageSegments', () => {
       const message = chatterPostBuilder
-        .buildMessage('This is plain text', null, [userId1, userId2]);
+        .buildPost('This is plain text', null, [userId1, userId2]);
       const { messageSegments } = message.body;
       expect(messageSegments.length).toEqual(3);
       expect(messageSegments[0].type).toEqual('Text');
@@ -59,7 +59,7 @@ describe('chatter-message-builder.js >', () => {
 
     test('should replace <br/> tags with \\n', () => {
       const message = chatterPostBuilder
-        .buildMessage('a<br/>b<br />c<br>d');
+        .buildPost('a<br/>b<br />c<br>d');
       const { messageSegments } = message.body;
       expect(messageSegments.length).toEqual(1);
       expect(messageSegments[0].type).toEqual('Text');
@@ -68,7 +68,7 @@ describe('chatter-message-builder.js >', () => {
 
     test('should create Bold segments for each <strong> tag', () => {
       const message = chatterPostBuilder
-        .buildMessage('This <strong>is</strong> important');
+        .buildPost('This <strong>is</strong> important');
       const { messageSegments } = message.body;
       expect(messageSegments.length).toEqual(5);
       expect(messageSegments[0].type).toEqual('Text');

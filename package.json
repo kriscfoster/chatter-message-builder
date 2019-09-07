@@ -1,7 +1,7 @@
 {
   "name": "chatter-post-builder",
   "version": "1.0.0",
-  "description": "Helps with building Salesforce chatter feed elements (supporting rich-text) which are supported by the Salesforce Chatter API.",
+  "description": "Helps to build Salesforce chatter feed elements (includes rich-text support) which are supported by the Salesforce Chatter API ☁️",
   "scripts": {
     "test": "jest test.js"
   },
