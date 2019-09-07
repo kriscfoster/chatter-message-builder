@@ -8,7 +8,24 @@ npm install chatter-post-builder
 ```
 
 ## Usage
-
 ```javascript
-console.log('I still need to write this section');
+const chatterPostBuilder = require('./chatter-post-builder.js');
+
+const simplePost = chatterPostBuilder.build('Hello World!');
+/*
+{
+  body: {
+    messageSegments: [
+      {
+        type: "Text",
+        text: "Hello World!"
+      }
+    ]
+  },
+  feedElementType : 'FeedItem',
+  subjectId: 'me'
+}
+*/
+
+console.log('This section is a work in progress!');
 ```

@@ -5,6 +5,10 @@
   "scripts": {
     "test": "jest test.js"
   },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true
+  },
   "keywords": [
     "salesforce",
     "chatter",
