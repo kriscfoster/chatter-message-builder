@@ -1,0 +1,20 @@
+{
+  "name": "chatter-message-builder",
+  "version": "1.0.0",
+  "description": "Helps with building Salesforce chatter feed elements (supporting rich-text) which are supported by the Salesforce Chatter API.",
+  "scripts": {
+    "test": "jest test.js"
+  },
+  "keywords": [
+    "salesforce",
+    "chatter",
+    "feed-element",
+    "rich-text",
+    "converter"
+  ],
+  "author": "Kris Foster",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
