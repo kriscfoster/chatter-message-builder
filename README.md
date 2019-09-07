@@ -8,10 +8,13 @@ npm install chatter-post-builder
 ```
 
 ## Usage
+### plain-text post to group with mention
 ```javascript
 const chatterPostBuilder = require('./chatter-post-builder.js');
+const groupId = '005D00000016Qxp';
+const mentions = ['005B0000000Ek1S'];
 
-const simplePost = chatterPostBuilder.build('Hello World!');
+const simplePost = chatterPostBuilder.build('Hello World!', groupId, mentions);
 /*
 {
   body: {
@@ -19,11 +22,15 @@ const simplePost = chatterPostBuilder.build('Hello World!');
       {
         type: "Text",
         text: "Hello World!"
+      },
+      {
+        type: "Mention",
+        id: "005B0000000Ek1S"
       }
     ]
   },
   feedElementType : 'FeedItem',
-  subjectId: 'me'
+  subjectId: '005D00000016Qxp'
 }
 */
 
